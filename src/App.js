@@ -15,7 +15,11 @@ function App() {
 
     setTodos([...todos, todo]);
   }
+  
+  const removeInput = (index) => {
 
+    setTodos(todos.filter((todo, i) => i !== index));
+  };
   
   return (
     <div className="App">
@@ -26,7 +30,7 @@ function App() {
       <input type ="text" name = "desc" value= {todo.desc} onChange ={inputChanged}/>
       <input type = "submit" value="Add" />
       </form>
-      <Todotable todos={todos}/>
+      <Todotable todos={todos} remove={removeInput}/>
     </div>
   );
 }

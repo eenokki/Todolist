@@ -11,6 +11,9 @@ export default function Todolist(props){
           <tr key={index}>
             <td>{todo.desc}</td>
             <td>{todo.date}</td>
+            <td>
+              <input type = "submit"  value="Delete" onClick={() =>props.remove(index)} />
+            </td>
             </tr>
           )
         }
